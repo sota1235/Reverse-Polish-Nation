@@ -4,6 +4,8 @@
  * reverse polish nation Program
  */
 
+function calc(){
+
 var stac[] = document.getElementById("num").split(" ");
 var i = 0;
 var sum = 0; // Answer
@@ -52,5 +54,7 @@ while(stac.length => 0){
       stac.pop();
     }
   }
-  document.getElementById('answer').innerHTML = "<p>Answer:"+sum+"</p>";
+}
+
+document.getElementsById("answer").innerHTML = "<p>Answer : " + sum + "</p>";
 }
