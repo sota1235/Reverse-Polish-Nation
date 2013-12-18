@@ -7,9 +7,9 @@
   </head>
   <body>
     <p>逆ポーランド記法</p>
-    <form>
+    <form onsubmit="return false">
       <input type="textbox" id="num">
-      <input type="submit" value="submit" onsubmit="calc(this.form); return false">
+      <input type="submit" value="submit" onclick="calc(this.form)">
     </form>
 
     <div id="answer"></div>
