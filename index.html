@@ -2,13 +2,16 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src="rpn.js"></script>
+    <script type='text/javascript' src='./rpn.js'></script>
     <title>title</title>
   </head>
   <body>
     <p>逆ポーランド記法</p>
-    <input type="textbox" id="num">
-    <input type="button" onclick="calc()">
+    <form>
+      <input type="textbox" id="num">
+      <input type="submit" value="submit" onclick="calc(this.form)">
+    </form>
+
     <div id="answer"></div>
   </body>
 </html>

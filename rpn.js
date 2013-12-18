@@ -4,12 +4,14 @@
  * reverse polish nation Program
  */
 
-function calc(){
-
-var stac[] = document.getElementById("num").split(" ");
+function calc(form){
+var stac = new Array();
+var stac2 = form.num.value.toString();
+alert(typeof(stac2));
+alert(stac2);
+stac = stac2.split(' ');
 var i = 0;
 var sum = 0; // Answer
-
 // エラー処理
 if(stac[0].match(/[^0-9]/g)) {
   alert("最初に２つの数字を入力してください");
@@ -19,7 +21,7 @@ if(stac[0].match(/[^0-9]/g)) {
   return;
 }
 
-while(stac.length => 0){
+while(stac.length >= 0){
   if(stac[i].match(/[^0-9+-*\/]/g)){
     alert("無効な文字列が含まれています");
     return;
@@ -34,7 +36,7 @@ while(stac.length => 0){
     }
   } else {
     // 記号の時の処理
-    swich(stac[i]){
+    switch(stac[i]){
       case "+" :
         sum = stac[i-1] + stac[i-2];
         break;
@@ -55,6 +57,5 @@ while(stac.length => 0){
     }
   }
 }
-
 document.getElementsById("answer").innerHTML = "<p>Answer : " + sum + "</p>";
 }
