@@ -6,12 +6,10 @@
 
 function calc(form){
 var stac = new Array();
-var stac2 = form.num.value.toString();
-alert(typeof(stac2));
-alert(stac2);
-stac = stac2.split(' ');
+stac = form.num.value.toString().split(' ');
 var i = 0;
 var sum = 0; // Answer
+
 // エラー処理
 if(stac[0].match(/[^0-9]/g)) {
   alert("最初に２つの数字を入力してください");
@@ -21,8 +19,8 @@ if(stac[0].match(/[^0-9]/g)) {
   return;
 }
 
-while(stac.length >= 0){
-  if(stac[i].match(/[^0-9+-*\/]/g)){
+while(stac.length > 0){
+  if(stac[i].match(/[^0-9\+\-\*\/]/g)){
     alert("無効な文字列が含まれています");
     return;
   }
@@ -49,13 +47,11 @@ while(stac.length >= 0){
       case "/" :
         sum = stac[i-1] / stac[i-2];
         break;
-      default:
-        break;
     }
     for(var j=0;j<3;j++){
       stac.pop();
     }
   }
 }
-document.getElementsById("answer").innerHTML = "<p>Answer : " + sum + "</p>";
+document.getElementById("answer").innerHTML = "<p>Answer : " + sum + "</p>";
 }
